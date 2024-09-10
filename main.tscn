@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://qqbya68q5ivl"]
+
+[ext_resource type="Theme" uid="uid://b1ac60pwjvh01" path="res://theme.tres" id="1_4fxlk"]
+[ext_resource type="PackedScene" uid="uid://bilpb18mq3bp4" path="res://game.tscn" id="2_ncrhk"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.84, 16.12)
+
+[node name="sections" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+offset_left = 15.0
+offset_top = 4.0
+offset_right = 836.0
+offset_bottom = 79.0
+theme = ExtResource("1_4fxlk")
+theme_override_constants/separation = 45
+
+[node name="Platforms" type="Button" parent="sections"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "Platforms"
+
+[node name="Settings" type="Button" parent="sections"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "Settings
+"
+
+[node name="icons" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 162.0
+offset_right = 1153.0
+offset_bottom = 40.0
+alignment = 2
+
+[node name="wifi" type="Button" parent="icons"]
+layout_mode = 2
+text = "wifi
+"
+
+[node name="Clock" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 44.0
+offset_top = 69.0
+offset_right = 287.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 56
+text = "3 : 05 pm"
+
+[node name="Subtxt" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 42.0
+offset_top = 143.0
+offset_right = 672.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "9 , Sep, 2024. Total 50 games playable in you libary"
+
+[node name="platforms" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 1153.0
+offset_right = 1153.0
+offset_bottom = 40.0
+
+[node name="games" type="HBoxContainer" parent="platforms"]
+layout_mode = 0
+offset_left = -1102.0
+offset_top = 153.0
+offset_right = -38.0
+offset_bottom = 584.0
+
+[node name="game" parent="platforms/games" instance=ExtResource("2_ncrhk")]
+layout_mode = 2
